@@ -33,6 +33,9 @@ namespace ReplacingSymbols
                     Console.ReadKey();
                 }
             }
+
+            //Обработаем последний элемент строки. 
+            //Если он равен первому символу второй строки из двух элементов, то мы заменим элемента на *
             if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
             {
                 outputLine[outputLine.Length - 1] = Convert.ToChar("*");
