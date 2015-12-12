@@ -14,6 +14,8 @@ namespace ReplacingSymbols
         public string ReplaceSymbols(string inputLine, string characters)
         {
             char[] outputLine = inputLine.ToCharArray();
+            Console.WriteLine("Length of outputLine " + outputLine.Length);
+            Console.ReadKey();
             char[] twoCaharacters = characters.ToCharArray();
 
             for (int i = 0; i < (outputLine.Length - 1); i++)
@@ -24,11 +26,18 @@ namespace ReplacingSymbols
                     Console.WriteLine(outputLine[i]);
                     Console.ReadKey();
                 }
-               
+                else
+                {
+                    outputLine[i] = Convert.ToChar(outputLine[i]);
+                    Console.WriteLine(outputLine[i]);
+                    Console.ReadKey();
+                }
             }
             if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
             {
                 outputLine[outputLine.Length - 1] = Convert.ToChar("*");
+                Console.WriteLine(outputLine[outputLine[outputLine.Length - 1]]);
+                Console.ReadKey();
             }
             return outputLine.ToString();
         }
@@ -40,7 +49,7 @@ namespace ReplacingSymbols
             string inputCharacters = Console.ReadLine();
             Program searchReplace = new Program();
             string resultString = searchReplace.ReplaceSymbols(inputString, inputCharacters);
-            Console.WriteLine("The result is ");
+            Console.WriteLine("The result is " + resultString);
             Console.ReadKey();
         }
     }
