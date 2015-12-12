@@ -39,7 +39,9 @@ namespace ReplacingSymbols
                 Console.WriteLine(outputLine[outputLine.Length - 1]);
                 Console.ReadKey();
             }
-            return outputLine.ToString();
+
+            string outputString = new string(outputLine);
+            return outputString;
         }
         static void Main(string[] args)
         {
