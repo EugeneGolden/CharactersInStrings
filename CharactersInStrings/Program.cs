@@ -18,15 +18,13 @@ namespace ReplacingSymbols
 
             for (int i = 0; i < (outputLine.Length - 1); i++)
             {
-                if (outputLine[i] == twoCaharacters[0])
+                if ((outputLine[i] == twoCaharacters[0]) && (outputLine[i + 1] != twoCaharacters[1]))
                 {
-                    if (outputLine[i + 1] != twoCaharacters[1])
-                    {
-                        outputLine[i] = Convert.ToChar("*");
-                        Console.WriteLine(outputLine[i]);
-                        Console.ReadKey();
-                    }
+                    outputLine[i] = Convert.ToChar("*");
+                    Console.WriteLine(outputLine[i]);
+                    Console.ReadKey();
                 }
+               
             }
             if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
             {
