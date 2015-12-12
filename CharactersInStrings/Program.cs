@@ -36,7 +36,7 @@ namespace ReplacingSymbols
             if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
             {
                 outputLine[outputLine.Length - 1] = Convert.ToChar("*");
-                Console.WriteLine(outputLine[outputLine[outputLine.Length - 1]]);
+                Console.WriteLine(outputLine[outputLine.Length - 1]);
                 Console.ReadKey();
             }
             return outputLine.ToString();
