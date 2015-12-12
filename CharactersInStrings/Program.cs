@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace ReplacingSymbols
 {
@@ -12,21 +13,37 @@ namespace ReplacingSymbols
         //два символа. Метод должен заменить в строке все вхождения первого символа на символ «*» если рядом с этим символом не стоит второй символ.
         public string ReplaceSymbols(string inputLine, string characters)
         {
-            string outputLine = null;
-            for (int i = 0; i < (inputLine.Length - 1); i++)
+            char[] outputLine = inputLine.ToCharArray();
+            char[] twoCaharacters = characters.ToCharArray();
+
+            for (int i = 0; i < (outputLine.Length - 1); i++)
             {
-                if (inputLine[i] == characters[0])
+                if (outputLine[i] == twoCaharacters[0])
                 {
-                    if (inputLine[i + 1] != characters[1])
+                    if (outputLine[i + 1] != twoCaharacters[1])
                     {
-                        outputLine[i] = "*";
+                        outputLine[i] = Convert.ToChar("*");
+                        Console.WriteLine(outputLine[i]);
+                        Console.ReadKey();
                     }
                 }
             }
-            return outputLine;
+            if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
+            {
+                outputLine[outputLine.Length - 1] = Convert.ToChar("*");
+            }
+            return outputLine.ToString();
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите строку, в которой будет осуществляться поиск далее введенных двух символов: ");
+            string inputString = Console.ReadLine();
+            Console.WriteLine("Введите два символа, на основании которых будет вестись поиск в строке: ");
+            string inputCharacters = Console.ReadLine();
+            Program searchReplace = new Program();
+            string resultString = searchReplace.ReplaceSymbols(inputString, inputCharacters);
+            Console.WriteLine("The result is ");
+            Console.ReadKey();
         }
     }
 }

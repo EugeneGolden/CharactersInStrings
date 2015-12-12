@@ -1,1 +1,6 @@
 c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\bin\Debug\CharactersInStrings.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\bin\Debug\CharactersInStrings.exe
+c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\bin\Debug\CharactersInStrings.pdb
+c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\obj\Debug\CharactersInStrings.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\obj\Debug\CharactersInStrings.exe
+c:\users\admin\documents\visual studio 2015\Projects\CharactersInStrings\CharactersInStrings\obj\Debug\CharactersInStrings.pdb
