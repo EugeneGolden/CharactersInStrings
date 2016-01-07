@@ -16,11 +16,13 @@ namespace ReplacingSymbols
             char[] outputLine = inputLine.ToCharArray();
             Console.WriteLine("Length of outputLine " + outputLine.Length);
             Console.ReadKey();
-            char[] twoCaharacters = characters.ToCharArray();
+            char[] twoCharacters = characters.ToCharArray();
 
-            for (int i = 0; i < (outputLine.Length - 1); i++)
+            
+
+            for (int i = 1; i < (outputLine.Length - 1); i++)
             {
-                if ((outputLine[i] == twoCaharacters[0]) && (outputLine[i + 1] != twoCaharacters[1]))
+                if (((outputLine[i] == twoCharacters[0]) && (outputLine[i + 1] != twoCharacters[1])) || ((outputLine[i] == twoCharacters[0]) && (outputLine[i - 1] != twoCharacters[1])))
                 {
                     outputLine[i] = Convert.ToChar("*");
                     Console.WriteLine(outputLine[i]);
@@ -30,18 +32,26 @@ namespace ReplacingSymbols
                 {
                     outputLine[i] = Convert.ToChar(outputLine[i]);
                     Console.WriteLine(outputLine[i]);
-                    Console.ReadKey();
+                    Console.ReadKey();                    
                 }
             }
 
             //Обработаем последний элемент строки. 
             //Если он равен первому символу второй строки из двух элементов, то мы заменим элемента на *
-            if (outputLine[outputLine.Length - 1] == twoCaharacters[0])
+            if ((outputLine[outputLine.Length - 1] == twoCharacters[0]) && (outputLine[outputLine.Length - 2] != twoCharacters[1]))
             {
                 outputLine[outputLine.Length - 1] = Convert.ToChar("*");
                 Console.WriteLine(outputLine[outputLine.Length - 1]);
                 Console.ReadKey();
             }
+
+            if ((outputLine[0] == twoCharacters[0]) && (outputLine[1] != twoCharacters[1]))
+            {
+                outputLine[0] = Convert.ToChar("*");
+                Console.WriteLine(outputLine[0]);
+                Console.ReadKey();
+            }
+            
 
             string outputString = new string(outputLine);
             return outputString;
@@ -49,12 +59,12 @@ namespace ReplacingSymbols
         static void Main(string[] args)
         {
             Console.WriteLine("Введите строку, в которой будет осуществляться поиск далее введенных двух символов: ");
-            string inputString = Console.ReadLine();
+            string inputString = "qweqwjwqkwqkwq";
             Console.WriteLine("Введите два символа, на основании которых будет вестись поиск в строке: ");
-            string inputCharacters = Console.ReadLine();
+            string inputCharacters = "qw";
             Program searchReplace = new Program();
-            string resultString = searchReplace.ReplaceSymbols(inputString, inputCharacters);
-            Console.WriteLine("The result is " + resultString);
+            inputString = searchReplace.ReplaceSymbols(inputString, inputCharacters);
+            Console.WriteLine("The result is " + inputString);
             Console.ReadKey();
         }
     }
